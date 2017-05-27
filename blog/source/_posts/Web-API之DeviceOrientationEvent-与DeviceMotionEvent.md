@@ -54,7 +54,7 @@ if (window.DeviceOrientationEvent) {
 ```
 
 ## 兼容性
-移动端支持大部分浏览器（不支持的为IE phone和Opera Mobild）
+移动端支持大部分浏览器（不支持的为IE phone和Opera Mobile）
 
 ## 相关库 [parallax.js](https://github.com/wagerfield/parallax)
 
@@ -78,8 +78,8 @@ if (window.DeviceOrientationEvent) {
 ```javascript
 	import Parallax form './parallax.js'
 
-	var scene = document.getElementById('scene');
-	var parallax = new Parallax(scene, {
+	let scene = document.querySelector('#scene');
+	let parallax = new Parallax(scene, {
 	  relativeInput: true,
 	  clipRelativeInput: false,
 	  hoverOnly: true,
