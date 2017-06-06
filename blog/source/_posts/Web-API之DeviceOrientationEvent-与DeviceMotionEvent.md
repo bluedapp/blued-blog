@@ -38,14 +38,14 @@ DeviceMotionEvent提供与当前设备位置和方向的速度变化先关的信
 ## 引入方式
 
 ```javascript
-判断当前window对象是否有DeviceMotionEvent属性，有则监听devicemotion事件:
+// 判断当前window对象是否有DeviceMotionEvent属性，有则监听devicemotion事件:
 
 if (window.DeviceMotionEvent) {
 	window.addEventListener("devicemotion", motionHandler, false);
 }
 
 
-判断当前window对象是否有DeviceOrientationEvent属性，有则监听deviceorientation事件:
+// 判断当前window对象是否有DeviceOrientationEvent属性，有则监听deviceorientation事件:
 
 if (window.DeviceOrientationEvent) {
 	window.addEventListener("deviceorientation", orientationHandler, false);
@@ -99,7 +99,7 @@ if (window.DeviceOrientationEvent) {
 	  pointerEvents: false
 	});
 
-  /* 注：
+  /*
     xMotion = parentElement.width  * (scalarX / 100) * layerDepth
     yMotion = parentElement.height * (scalarY / 100) * layerDepth
 
