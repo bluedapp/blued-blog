@@ -1,4 +1,4 @@
 # blued-blog
 
 > 博客所有源码都在blog文件夹下，各种hexo命令请在blog文件夹下执行♥️
-> [如何写一片博文的简易介绍](http://web.blued.cn/2017/06/10/hello-world/)
+> [如何写一片博文的简易介绍](http://web.blued.cn/2017/04/10/hello-world/)
