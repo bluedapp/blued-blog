@@ -78,10 +78,10 @@ sudo vi /etc/hosts
 ```javascript
 wx.config({
    debug: true,
-   appId: 'wxe527f9f4ded086bf',
-   timestamp: 'efbm2f95lcx7c3j',
-   nonceStr:'1495707198',
-   signature: '0520367302ec40bb8b2eb71384730fea187a8558',
+   appId: 'XXX',
+   timestamp: 'j1495707198',
+   nonceStr:'efbm2f95lcx7c3',
+   signature: 'XXX',
    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见官方文档附录2
 })
 ```
