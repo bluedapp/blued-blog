@@ -4,6 +4,8 @@ title: 调用微信JS-SDK自定义分享内容
 date: 2017-05-25 11:20:38
 author: dujun
 tags: JavaScript
+email: dujun@blued.com
+avatar: https://avatars1.githubusercontent.com/u/16009933?v=3
 ---
 调用微信SDK自定义分享内容
 ## 调用微信SDK自定义分享内容
