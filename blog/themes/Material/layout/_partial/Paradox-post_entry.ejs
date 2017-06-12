@@ -43,7 +43,7 @@
           </div>
           <div>
             <strong>
-              <a href="mailto:<%= post.email || theme.sns.email %>"><%= post.author || config.author %></a>
+              <a href="<%= post.github || theme.sns.github %>"><%= post.author || config.author %></a>
             </strong>
             <span><%= date(post.date, 'MMM DD, YYYY') %></span>
           </div>

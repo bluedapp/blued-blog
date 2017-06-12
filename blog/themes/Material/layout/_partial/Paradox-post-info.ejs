@@ -7,7 +7,7 @@
   <!-- Author Name & Date -->
   <div>
     <strong>
-      <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
+      <a href="<%= page.github || theme.sns.github %>"><%= page.author || config.author %></a>
     </strong>
     <span><%= date(page.date, 'MMM DD, YYYY') %></span>
   </div>

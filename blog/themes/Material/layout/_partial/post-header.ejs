@@ -28,7 +28,7 @@
           <!-- Author Avatar & Name -->
           <img src="<%= post.avatar || theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= page.author || config.author %>'s avatar">
           <span class="name-span">
-            <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
+            <a href="<%= page.github || theme.sns.github %>>"><%= page.author || config.author %></a>
           </span>
         </div>
 
@@ -40,7 +40,7 @@
             <!-- Author Avatar & Name -->
             <img src="<%= post.avatar || theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= page.author || config.author %>'s avatar">
             <span class="name-span">
-              <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
+              <a href="<%= page.github || theme.sns.github %>"><%= page.author || config.author %></a>
             </span>
           </div>
 
