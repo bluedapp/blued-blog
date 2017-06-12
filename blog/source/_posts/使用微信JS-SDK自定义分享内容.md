@@ -16,7 +16,7 @@ tags: JavaScript
 <img src="/img/dujun/appID.jpeg" alt="appID" width="50%">
 
 * 配置安全域名(以公司blued举栗子)
-<img src="/img/dujun/安全域名.jpeg" alt="安全域名" width="50%">
+<img src="/img/dujun/domain.jpeg" alt="domain" width="50%">
 <font color=#F08080>(注意:域名不能配置IP地址)</font>
 #### 1.2 获取接口签名
 * 用appID和appsecret获取token
@@ -43,18 +43,17 @@ sudo vi /etc/hosts
 * nginx反向代理
  安装nginx: ```brew install nginx```
  查看安装位置: ```brew list nginx```
- 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf```
- 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
- 打开nginx/conf.d，创建并编辑: ```vi app.blued.cn-localhost.conf```
+ 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf``` 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
+ 创建并打开nginx/conf.d,然后创建并编辑: ```vi app.blued.cn-localhost.conf```
 
  添加:
  ``` javascript
  server {
-  listen  80;
-  server_name  app.blued.cn;
+    listen  80;
+    server_name  app.blued.cn;
 
   location / {
-   proxy_pass http://127.0.0.1:8000/;
+    proxy_pass http://127.0.0.1:8000/;
   }
 }
  ```
