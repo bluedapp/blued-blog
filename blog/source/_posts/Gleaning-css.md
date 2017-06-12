@@ -28,7 +28,7 @@ tags:
 
 * 1.3 display && vertical-align
 
-```
+```html
 <div> <img  src={...}/>  </div>
 
 --style--
@@ -46,7 +46,7 @@ div{
 * 1.4 position && margin-top
 将已知大小的元素定位在最高层级位置并实现垂直方向居中效果
 
-```
+```css
 div{
   height:50px;
   position:absolute;
@@ -58,7 +58,7 @@ div{
 
 #### 2 flex  align-item属性
 
-```
+``` css
 display: flex;
 align-items:Center;
 
@@ -68,7 +68,7 @@ align-items:Center;
 
 #### 3 借助 position
 
-```
+```html
 <div> <p>BLUED</p> </div>
 
 --style--
@@ -95,7 +95,7 @@ p{
 
 * 1.1 display && text-align
 
-```
+```scss
 display:inline-block;
 text-align:center;
 ```
@@ -120,7 +120,7 @@ text-align:center;
 
 #### 2 flex
 
-```
+```html
 <div>
   <span>spot</span>
 </div>
@@ -140,7 +140,7 @@ div{
 
 考虑使用text-align属性
 
-```
+```html
 <div>
  <span>BLUED</span>
 </div>
@@ -170,7 +170,7 @@ span{
 
 如果我们在前面添加一行文字
 
-```
+```html
 <div>
   CENTER <span>BLUED</span>
 </div>
@@ -189,7 +189,7 @@ span{
 
 * 方案1 属性设置
 
-```
+```html
 <div> <img src={...}/> </div>
 
 --style--
@@ -210,7 +210,7 @@ img{
 
 * 方案2 外面再包装一层盒子
 
-```
+```html
 <div>
   <p> <img src={...} />  </p>
 </div>
@@ -239,7 +239,7 @@ p{
 未知高度的块级元素实现层级定位并且水平方向保持居中处理方案同行内元素相同
 不过需要注意的是如果使用的是第一种处理方式 当此元素未设置高度 其高度会被撑到父级高度大小
 
-```
+```html
 <div> <p>BLUED</p> </div>
 
 --style--
@@ -270,16 +270,16 @@ p{
 
 * 当元素具有absolute 属性的时候 此元素会具有块级元素的特性
 
-```
+```css
 display:inline-block;
 ```
 * bourbon 中提供的 ellipsis 方法
-```
+```scss
 @include ellipsis()
 ```
 在Android和iOS中表现不同
 
-```
+```html
 <a> <span>所爱隔山海 山海皆可平</span> </a>
 
 -- style --
@@ -301,7 +301,7 @@ iOS 效果如下
 
 
 其源码为
-```
+```scss
 @mixin ellipsis(
   $width: 100%,
   $display: inline-block
@@ -315,17 +315,17 @@ iOS 效果如下
 }
 ```
 可以看到元素默认display属性是inline-block  对于具有此属性的元素 其默认的对齐方式为基线对齐
-```
+```css
 vertical-align:baseline    
 ```
 这个属性导致Android和iOS中表现不同
 
 解决方案:
 为元素添加属性
-```
+```css
 display:block
 ```
 或者
-```
+```css
 vertical-align:middle  
 ```
