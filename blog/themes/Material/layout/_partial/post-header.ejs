@@ -26,7 +26,7 @@
         <!-- Post Header Info -->
         <div class="post-header_info without-thumbnail">
           <!-- Author Avatar & Name -->
-          <img src="<%= theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= config.author %>'s avatar">
+          <img src="<%= post.avatar || theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= page.author || config.author %>'s avatar">
           <span class="name-span">
             <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
           </span>
@@ -38,7 +38,7 @@
           <!-- Post Header Info -->
           <div class="post-header_info with-thumbnail">
             <!-- Author Avatar & Name -->
-            <img src="<%= theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= config.author %>'s avatar">
+            <img src="<%= post.avatar || theme.img.avatar %>" class="avatar-img" width="44px" height="44px" alt="<%= page.author || config.author %>'s avatar">
             <span class="name-span">
               <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
             </span>

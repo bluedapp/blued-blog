@@ -39,7 +39,7 @@
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
           <!-- Author Avatar -->
           <div id="author-avatar">
-            <img src="<%= theme.img.avatar %>" width="44px" height="44px" alt="<%= config.author %>'s avatar">
+            <img src="<%= post.avatar || theme.img.avatar %>" width="44px" height="44px" alt="<%= post.author ||config.author %>'s avatar">
           </div>
           <div>
             <strong>
