@@ -65,8 +65,8 @@ sudo vi /etc/hosts
  * nginx常用命令:
 
   启动: ```sudo nginx```
-  停止: ```sudo -s stop```
-  重启: ```sudo -s reload```
+  停止: ```sudo nginx -s stop```
+  重启: ```sudo nginx -s reload```
 
 #### 1.4 开始写代码
 页面中引入微信js文件
