@@ -4,6 +4,8 @@ title: 调用微信JS-SDK自定义分享内容
 date: 2017-05-25 11:20:38
 author: dujun
 tags: JavaScript
+email: dujun@blued.com
+avatar: https://avatars1.githubusercontent.com/u/16009933?v=3
 ---
 调用微信SDK自定义分享内容
 ## 调用微信SDK自定义分享内容
@@ -16,7 +18,7 @@ tags: JavaScript
 <img src="/img/dujun/appID.jpeg" alt="appID" width="50%">
 
 * 配置安全域名(以公司blued举栗子)
-<img src="/img/dujun/安全域名.jpeg" alt="安全域名" width="50%">
+<img src="/img/dujun/domain.jpeg" alt="domain" width="50%">
 <font color=#F08080>(注意:域名不能配置IP地址)</font>
 #### 1.2 获取接口签名
 * 用appID和appsecret获取token
@@ -43,18 +45,17 @@ sudo vi /etc/hosts
 * nginx反向代理
  安装nginx: ```brew install nginx```
  查看安装位置: ```brew list nginx```
- 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf```
- 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
- 打开nginx/conf.d，创建并编辑: ```vi app.blued.cn-localhost.conf```
+ 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf``` 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
+ 创建并打开nginx/conf.d,然后创建并编辑: ```vi app.blued.cn-localhost.conf```
 
  添加:
  ``` javascript
  server {
-  listen  80;
-  server_name  app.blued.cn;
+    listen  80;
+    server_name  app.blued.cn;
 
   location / {
-   proxy_pass http://127.0.0.1:8000/;
+    proxy_pass http://127.0.0.1:8000/;
   }
 }
  ```
@@ -64,8 +65,8 @@ sudo vi /etc/hosts
  * nginx常用命令:
 
   启动: ```sudo nginx```
-  停止: ```sudo -s stop```
-  重启: ```sudo -s reload```
+  停止: ```sudo nginx -s stop```
+  重启: ```sudo nginx -s reload```
 
 #### 1.4 开始写代码
 页面中引入微信js文件
@@ -77,10 +78,10 @@ sudo vi /etc/hosts
 ```javascript
 wx.config({
    debug: true,
-   appId: 'wxe527f9f4ded086bf',
-   timestamp: 'efbm2f95lcx7c3j',
-   nonceStr:'1495707198',
-   signature: '0520367302ec40bb8b2eb71384730fea187a8558',
+   appId: 'XXX',
+   timestamp: 'j1495707198',
+   nonceStr:'efbm2f95lcx7c3',
+   signature: 'XXX',
    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见官方文档附录2
 })
 ```

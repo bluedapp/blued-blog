@@ -4,6 +4,8 @@ title: CSS--项目中那些居中问题
 date: 2017-06-10 15:24:32
 author: mxx
 tags: css
+github: https://github.com/mengxxSELF
+avatar: https://avatars0.githubusercontent.com/u/20737114?v=3
 ---
 
 元素的居中问题可以从以下方面实现

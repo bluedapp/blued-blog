@@ -2,12 +2,12 @@
 
   <!-- Author Avatar -->
   <div id="author-avatar">
-    <img src="<%- theme.img.avatar %>" width="44px" height="44px" alt="Author Avatar"/>
+    <img src="<%- page.avatar || theme.img.avatar %>" width="44px" height="44px" alt="Author Avatar"/>
   </div>
   <!-- Author Name & Date -->
   <div>
     <strong>
-      <a href="mailto:<%= page.email || theme.sns.email %>"><%= page.author || config.author %></a>
+      <a href="<%= page.github || theme.sns.github %>"><%= page.author || config.author %></a>
     </strong>
     <span><%= date(page.date, 'MMM DD, YYYY') %></span>
   </div>

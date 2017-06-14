@@ -114,8 +114,11 @@ sns_share:
 sidebar:
     dropdown:
         Email Me:
-            link: "#"
+            link: "mailto:web@blued.com"
             icon: email
+        GitHub:
+            link: "https://github.com/bluedapp"
+            icon: home
     homepage:
         use: true
         icon: home
