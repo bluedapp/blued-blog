@@ -1,6 +1,7 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "blued-blog",
+  "version": "0.1.0",
+  "description": "Blued Web Blog",
   "private": true,
   "hexo": {
     "version": "3.3.7"
