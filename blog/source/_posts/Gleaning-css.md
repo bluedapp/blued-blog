@@ -6,6 +6,7 @@ author: mxx
 tags: css
 github: https://github.com/mengxxSELF
 avatar: https://avatars0.githubusercontent.com/u/20737114?v=3
+banner: /img/mxx/20170526_Gleaning_css/banner_css.png
 ---
 
 元素的居中问题可以从以下方面实现
