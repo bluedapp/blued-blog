@@ -1,9 +1,11 @@
 ---
-uuid: 8ca03cd0-40fb-11e7-beba-77fdbcea99dc
-title: Web API之DeviceOrientationEvent 与DeviceMotionEvent
-date: 2017-05-25 11:37:59
-author: godengine
-tags: JavaScript
+uuid: 1e96e2d0-51a8-11e7-be83-b5923ff0aabb
+author: GodEngine
+email: chenggong@blued.com
+avatar: https://avatars0.githubusercontent.com/u/16115512?v=3
+title: Web-API之DeviceOrientationEvent-与DeviceMotionEvent
+date: 2017-06-15 16:53:35
+tags:
 ---
 w3c提供了关于提供主机设备物理方向的DOM事件标准。
 
