@@ -4,6 +4,7 @@ author: GodEngine
 email: chenggong@blued.com
 avatar: https://avatars0.githubusercontent.com/u/16115512?v=3
 title: Web-API之DeviceOrientationEvent-与DeviceMotionEvent
+github: https://github.com/GodEngine
 date: 2017-06-15 16:53:35
 tags:
 ---
