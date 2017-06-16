@@ -77,3 +77,7 @@ prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'okaidia'
   line_number: false    # default false
+
+gitinfo:
+  - avatar_url
+  - html_url

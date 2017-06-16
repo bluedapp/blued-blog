@@ -4,10 +4,12 @@ title: 调用微信JS-SDK自定义分享内容
 date: 2017-05-25 11:20:38
 author: dujun
 tags: JavaScript
+email: dujun@blued.com
+avatar: https://avatars1.githubusercontent.com/u/16009933?v=3
 ---
 调用微信SDK自定义分享内容
 ## 调用微信SDK自定义分享内容
-###1.本地开发测试
+### 1.本地开发测试
 #### 1.1使用测试账号获取相关参数
 
 * 使用个人微信登录公众平台接口测试号申请: [测试号申请](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)
@@ -16,9 +18,9 @@ tags: JavaScript
 <img src="/img/dujun/appID.jpeg" alt="appID" width="50%">
 
 * 配置安全域名(以公司blued举栗子)
-<img src="/img/dujun/安全域名.jpeg" alt="安全域名" width="50%">
+<img src="/img/dujun/domain.jpeg" alt="domain" width="50%">
 <font color=#F08080>(注意:域名不能配置IP地址)</font>
-####1.2 获取接口签名
+#### 1.2 获取接口签名
 * 用appID和appsecret获取token
 ``` javascript
 https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appId={app_id}&secret={secret}
@@ -33,28 +35,27 @@ https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign
 ```
 微信 JS 接口签名校验工具
 <img src="/img/dujun/signature.jpeg" alt="signature" width="50%">
-noncestr:随机字符串，由开发者随机生成
+noncestr: 随机字符串，由开发者随机生成
 timestamp: 由开发者生成的当前时间戳 ```parseInt(new Date().getTime() / 1000)```
-####1.3 设置反向代理
-* 更改host, 在最下方加入: 127.0.0.1 app.blued.cn
+#### 1.3 设置反向代理
+* 更改host，在最下方加入: 127.0.0.1 app.blued.cn
 ``` javascript
 sudo vi /etc/hosts
 ```
 * nginx反向代理
  安装nginx: ```brew install nginx```
  查看安装位置: ```brew list nginx```
- 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf```
- 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
- 打开nginx/conf.d,创建并编辑: ```vi app.blued.cn-localhost.conf```
+ 更改nginx配置: ```vi /usr/local/etc/nginx/nginx.conf``` 在最后一个大括号前添加 ```include ./conf.d/*.conf;```
+ 创建并打开nginx/conf.d,然后创建并编辑: ```vi app.blued.cn-localhost.conf```
 
  添加:
  ``` javascript
  server {
-  listen  80;
-  server_name  app.blued.cn;
+    listen  80;
+    server_name  app.blued.cn;
 
   location / {
-   proxy_pass http://127.0.0.1:8000/;
+    proxy_pass http://127.0.0.1:8000/;
   }
 }
  ```
@@ -64,10 +65,10 @@ sudo vi /etc/hosts
  * nginx常用命令:
 
   启动: ```sudo nginx```
-  停止: ```sudo -s stop```
-  重启: ```sudo -s reload```
+  停止: ```sudo nginx -s stop```
+  重启: ```sudo nginx -s reload```
 
-####1.4 开始写代码
+#### 1.4 开始写代码
 页面中引入微信js文件
 ```
 <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
@@ -77,10 +78,10 @@ sudo vi /etc/hosts
 ```javascript
 wx.config({
    debug: true,
-   appId: 'wxe527f9f4ded086bf',
-   timestamp: 'efbm2f95lcx7c3j',
-   nonceStr:'1495707198',
-   signature: '0520367302ec40bb8b2eb71384730fea187a8558',
+   appId: 'XXX',
+   timestamp: 'j1495707198',
+   nonceStr:'efbm2f95lcx7c3',
+   signature: 'XXX',
    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'onMenuShareQQ', 'onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见官方文档附录2
 })
 ```
@@ -107,13 +108,13 @@ wx.ready(function () {
   * 严格按照微信官方文档的书写方式,驼峰与下划线并存
   * imgUrl地址为绝对路径
 
-####1.5 使用微信web开发者工具调试
-现在微信的开发工具已经可以开发网页了,并且集成了Chrome的DevTool进行调试。
+#### 1.5 使用微信web开发者工具调试
+现在微信的开发工具已经可以开发网页了，并且集成了Chrome的DevTool进行调试。
 console里出现```errMsg: "config:ok"```就大功告成啦。
 ___
 
-###2.线上开发
-* 出于安全考虑，必须在服务器端实现签名的逻辑,getWxSignature.js代码如下:
+### 2.线上开发
+* 出于安全考虑，必须在服务器端实现签名的逻辑，getWxSignature.js代码如下:
 
 ```javascript
 const req = require('bd-require')
@@ -201,7 +202,7 @@ try {
 }
 ```
 * 前端代码 (react + yarn)
-前端发送请求后拿到相关参数,放入config
+前端发送请求后拿到相关参数，放入config
 
 ```javascript
 wx.config({

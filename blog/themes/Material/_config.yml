@@ -75,7 +75,7 @@ img:
             #src: "/img/upyun_logo.svg"
 
 # Custom Fonts
-fonts: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
 
 # Card Elevation Level
 card_elevation: 2
@@ -92,7 +92,7 @@ sns:
     twitter: "https://twitter.com/blued"
     googleplus:
     weibo: "http://weibo.com/bluedapp"
-    instagram: "https://instagram.com/bluedofficial/"
+    instagram: "https://instagram.com/bluedapp"
     tumblr:
     github: "https://github.com/bluedapp"
     linkedin:
@@ -114,8 +114,11 @@ sns_share:
 sidebar:
     dropdown:
         Email Me:
-            link: "#"
+            link: "mailto:web@blued.com"
             icon: email
+        GitHub:
+            link: "https://github.com/bluedapp"
+            icon: home
     homepage:
         use: true
         icon: home
