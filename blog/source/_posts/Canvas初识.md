@@ -226,6 +226,3 @@ raf(function tick () {
   raf(tick)
 })
 ```
-
-下图是使用requestAnimationFrame[左侧]与setInterval[右侧]的效果对比图
-![canvas](/img/mxx/20170630_canvas/compare.gif)
