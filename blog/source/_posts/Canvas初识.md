@@ -12,8 +12,9 @@ banner: /img/mxx/20170630_canvas/banner_canvas.png
 
 ### 什么是canvas
 
-
 > Canvas是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素 这个HTML元素是为了客户端矢量图形而设计的。它自己没有行为，但却把一个绘图 API 展现给客户端 JavaScript 以使脚本能够把想绘制的东西都绘制到一块画布上
+
+<!-- More -->
 
 canvas 是HTML5新增的元素 可以将其看作为一块绘画的画板 而JavaScript就是画笔
 
