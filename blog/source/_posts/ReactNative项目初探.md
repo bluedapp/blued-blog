@@ -7,6 +7,7 @@ date: 2017-07-14 10:43:22
 tags: ReactNative
 github: https://github.com/mengxxSELF
 avatar: https://avatars0.githubusercontent.com/u/20737114?v=3
+banner: /img/mxx/20170714_RN/rn_banner.png
 ---
 
 
