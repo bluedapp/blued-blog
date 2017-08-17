@@ -19,7 +19,7 @@ tags:
 2. 验证有效性
 3. 验证成功&发送短信验证码
 
-![](/images/generator-captcha/screenshot-1.png)
+![](/img/jarvis/generator-captcha/screenshot-1.png)
 
 ## 图形验证码的生成
 
