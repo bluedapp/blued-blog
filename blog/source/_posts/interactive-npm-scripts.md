@@ -44,10 +44,10 @@ const questions = [
     type: 'checkbox',
     message: 'Please make your choice:',
     choices: [
-      'Sprite (是否生成雪碧图)',
-      'Retina (是否支持 Retina 雪碧图)',
-      'CSS Module (是否使用 CSS Module)',
-      'Use React (是否使用 React, 默认 Preact)'
+      { name: 'Sprite (是否生成雪碧图)', value: 's' },
+      { name: 'Retina (是否支持 Retina 雪碧图)', value: 'r' },
+      { name: 'CSS Module (是否使用 CSS Module)', value: 'm' },
+      { name: 'Use React (是否使用 React, 默认 Preact)', value: 'R' }
     ]
   }
 ]
@@ -61,12 +61,7 @@ inquirer.prompt(questions).then(function ({ project, conf }) {
   // 拼接成 Webpack 2 规定的参数格式
   args.push(`--env.p=${project}`)
 
-  const [needSprite, needRetina, needCSSModule, needReact] = conf
-
-  needSprite && args.push('--env.s')
-  needRetina && args.push('--env.r')
-  needCSSModule && args.push('--env.m')
-  needReact && args.push('--env.R')
+  conf.map((command) => args.push(`--env.${command}`))
 })
 ```
 
