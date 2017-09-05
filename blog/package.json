@@ -4,11 +4,11 @@
   "description": "Blued Web Blog",
   "private": true,
   "hexo": {
-    "version": "3.3.7"
+    "version": "3.3.8"
   },
   "dependencies": {
     "fs": "0.0.1-security",
-    "hexo": "^3.2.0",
+    "hexo": "^3.3.8",
     "hexo-author": "0.0.9",
     "hexo-deployer-git": "^0.3.0",
     "hexo-generator-archive": "^0.1.4",
