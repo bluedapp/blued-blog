@@ -79,5 +79,5 @@ prism_plugin:
   line_number: false    # default false
 
 gitinfo:
-  - avatar_url
-  - html_url
+  avatar_url: avatar
+  html_url: github
