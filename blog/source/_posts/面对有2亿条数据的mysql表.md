@@ -48,7 +48,7 @@ EXPLAIN
 SELECT *
 FROM users_orders
 WHERE
-	class IN (1, 2,3) AND
+	class IN (1, 2, 3) AND
 	score > 90 AND
 	sex = 1
 ORDER BY id DESC
