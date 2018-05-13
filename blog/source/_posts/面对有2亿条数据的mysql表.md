@@ -46,7 +46,7 @@ tags: mysql node
 ```javascript
 EXPLAIN 
 SELECT *
-FROM users_orders
+FROM student
 WHERE
 	class IN (1, 2, 3) AND
 	score > 90 AND
