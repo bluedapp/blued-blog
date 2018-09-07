@@ -75,7 +75,7 @@ object-fit 的默认值为fill，完全填充
 
 ![fill](https://user-gold-cdn.xitu.io/2018/9/7/165b1e24971b416a?w=875&h=404&f=png&s=584852)
 
-从左到右展示， img空元素  原始图片 img按照fill填充了原始图片之后 
+从左到右展示， img空元素  原始图片 img按照fill填充了原始图片之后
 
 可以看到，图片被强制填充整个Img盒子，完全变形了
 
@@ -95,7 +95,7 @@ object-fit 的默认值为fill，完全填充
 
 ![contain](https://user-gold-cdn.xitu.io/2018/9/7/165b1e5bb8a28800?w=928&h=418&f=png&s=646693)
 
-从左到右展示， img空元素  原始图片 img按照contain填充了原始图片之后 
+从左到右展示， img空元素  原始图片 img按照contain填充了原始图片之后
 
 图片保持了原始宽高比
 
@@ -181,7 +181,7 @@ img {
 
 ![cover](https://user-gold-cdn.xitu.io/2018/9/7/165b1efc99dadc5d?w=880&h=415&f=png&s=625234)
 
-从左到右展示， img空元素  原始图片 img按照cover填充了原始图片之后 
+从左到右展示， img空元素  原始图片 img按照cover填充了原始图片之后
 
 图片的宽高比没变，但是多余的部分被裁剪掉了
 
@@ -202,7 +202,7 @@ img {
 
 ![none](https://user-gold-cdn.xitu.io/2018/9/7/165b1f220321414c?w=904&h=408&f=png&s=587489)
 
-从左到右展示， img空元素  原始图片 img按照none填充了原始图片之后 
+从左到右展示， img空元素  原始图片 img按照none填充了原始图片之后
 
 > 被替换的内容大小**保持其宽高比** 并且尺寸不变
 
@@ -212,7 +212,7 @@ img {
 
 ![none](https://user-gold-cdn.xitu.io/2018/9/7/165b1fa00f269c13?w=926&h=490&f=png&s=871326)
 
-从左到右展示， img空元素  原始图片 img按照none填充了原始图片之后 
+从左到右展示， img空元素  原始图片 img按照none填充了原始图片之后
 
 原始图片大小 576 x 636
 
@@ -237,7 +237,7 @@ none 好像是选取了原始图中一块 300 x 300的区域大小的资源块 �
 ```
 
  scale-down的表现形式取决于 图片源 与 Img盒子 的大小
- 
+
  如果  图片源 大于 Img盒子，其呈现结果和 contain 一样，保持图片源宽高比进行填充
 
 ![scale-down](https://user-gold-cdn.xitu.io/2018/9/7/165b202c210c3026?w=839&h=374&f=png&s=630571)
@@ -296,7 +296,7 @@ Object-position 可以按照 background-position 理解，用来决定替换资�
 
 object-position设置为img盒子的一半, 三个图片的展示样式
 
-## 应用于video 
+## 应用于video
 
 在处理video元素播放的时候，我们经常能看到视频会自动补充黑边
 
@@ -339,9 +339,10 @@ video {
 
 ## 参考文章
 
-* 补充一些 video 的知识 
+* 补充一些 video 的知识
 
-[video 和 audio在移动端的表现](https://mengxxself.github.io/2017/10/24/video%E5%92%8Caudio%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%A1%A8%E7%8E%B0/)
+[video 和 audio在移动端的表现](http://web.blued.cn/2017/10/30/video%E4%B8%8Eaudio%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%A1%A8%E7%8E%B0/)
+
 * [阻止视频在移动端页面中全屏播放](https://www.jianshu.com/p/8c17967adee7)
 
 * [半深入理解CSS3 object-position/object-fit属性](https://www.zhangxinxu.com/wordpress/2015/03/css3-object-position-object-fit/)
