@@ -4,7 +4,7 @@
   "description": "Blued Web Blog",
   "private": true,
   "hexo": {
-    "version": "3.3.8"
+    "version": "3.3.9"
   },
   "dependencies": {
     "fs": "0.0.1-security",
