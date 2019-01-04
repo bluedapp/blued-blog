@@ -26,10 +26,10 @@ tags:
 可以传1到2个参数,第一个参数是目标模型,第二个参数是源模型的外联key,第二个参数也可以传一个对象,如:
 
 ```javascript
-// 只传目标模型,默认外联key为源模型的主键
+// 只传目标模型,需要指定源模型的@ForeignKey
 @BelongsTo(() => Team)
 
-// 传入teamId作为源模型的外联key,默认目标模型对应的外联key为目标模型的主键
+// 传入teamName作为源模型的外联key,默认目标模型对应的外联key为目标模型的主键
 @BelongsTo(() => Team, 'teamName')
 ```
 
