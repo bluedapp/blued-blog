@@ -11,19 +11,17 @@ tags: Node 爬虫
 
 > 教大家如何用 node 写一个简单的爬虫程序
 
-### 爬虫是什么
+### 什么是爬虫
 
-网络爬虫，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。
+爬虫，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。
 
-顾名思义，爬虫就是从互联网上爬取我们想要的数据，也可以叫它为数据挖掘。
-
-在大数据时代，数据就是第一生产力。例如我们想买到低价的机票，可能需要时不时的去各个网站上去看实时的价格。但如果我们掌握了爬虫，我们可以编写脚本定时的去爬取各个网站上实时的机票价格，然后设置一个阈值，当到达这个价格的时候就给自己发通知，这样就可以抢到我们心仪价格的机票了~
+在大数据时代，数据就是第一生产力，我们可以拿数据做我们想做的事各种事情。例如我们想买到低价的机票，那可能需要时不时的去各个网站上去看实时的价格。但如果我们掌握了爬虫，我们可以编写脚本定时的去爬取各个网站上实时的机票价格，然后设置一个阈值，当到达这个价格的时候就给自己发通知，这样就可以抢到我们心仪价格的机票了~
 
 <br />
 
 ### 准备工作
 
-用 node 做爬虫，我们需要一些工具（npm包）来帮助我们更好的去爬取数据。
+用 node 做爬虫，我们需要一些工具（npm包）来帮助我们更好的去爬取和解析数据。
 
 * [request](https://www.npmjs.com/package/request) 常用的网络请求库
 * [iconv-lite](https://www.npmjs.com/package/iconv-lite) 用于将 GBK 编码转成 utf8
@@ -33,10 +31,12 @@ tags: Node 爬虫
 
 ### 网站常见的数据渲染方式
 
-目前网站中的数据基本是通过两种方式展示的。一种是服务端渲染，一种是前端渲染。所以接下来的实战会包含这两种渲染方式的爬取。
+目前网站中的数据基本是通过以下两种方式展示的。
 
-* 服务端渲染，数据和页面的HTML在一起的。我们直接通过请求页面的URL，就可以拿到 HTML 编码的字符串，然后再去解析就可以拿到我们想要的数据。
-* 前端渲染，一般通过接口来获取数据并渲染，这种情况我们只要找出获取数据的接口，就可以通过直接调用接口来获取到我们想要的数据。
+* 服务端渲染，数据和页面的HTML在一起的。我们直接通过请求页面的URL，就可以拿到 HTML 编码的字符串，然后再去解析它就可以拿到我们想要的数据。
+* 前端渲染，一般通过接口来获取数据并渲染，这种情况我们需要通过控制台的 network 模块找出获取数据的接口，就可以通过调用接口来获取到我们想要的数据。
+
+接下来的实战中会涵盖这两种渲染方式的爬取。
 
 <br />
 
@@ -59,11 +59,12 @@ async function task () {
     encoding: null,
   })
   // 不设置 encoding: null 的话，其内部会自动帮我们将 buffer 转成 string
-  // html = html.toString('utf8')
+  // 例如 html = html.toString('utf8')
   html = iconv.decode(html, 'gbk')
   // 解析 HTML 编码的数据
   const $ = cheerio.load(html)
 
+  // 通过类 jquery 的方式解析并输出排行榜数据
   $('.box-cont').each((_, item) => {
     const boxCont = $(item)
     const title = boxCont.find('.hd .title a').text()
@@ -76,9 +77,11 @@ async function task () {
   })
 }
 ```
+
 <br />
 
 #### 爬取京东商品评论接口并分析热销的型号（前端渲染）
+
 > [iphonexs max 评论区地址](https://item.jd.com/100000287113.html#comment)
 
 ```javascript
@@ -114,9 +117,9 @@ async function analyseComment (page = 1) {
   let data = await request({
     url: pageUrl,
     headers: {
-      // 模拟浏览器
+      // 模拟浏览器 UA
       'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
-      // 来源字段必须存在，否则返回数据为空。
+      // 来源字段必须存在，否则返回数据为空。（jd 基本的反爬虫策略）
       referer: 'https://item.jd.com/100000287113.html',
     },
     qs: {
@@ -133,11 +136,11 @@ async function analyseComment (page = 1) {
   })
   // 编码转换
   data = iconv.decode(data, 'gbk')
-  // 转换成 JSON
+  // 解析 JSON 字符串
   data = JSON.parse(data)
 
+  // 分析数据并显示
   const { comments } = data
-
   comments.forEach((comment: any) => {
     // 分析颜色，内存和型号(版本)
     const color = comment.productColor
@@ -151,9 +154,7 @@ async function analyseComment (page = 1) {
     console.log(`--第${count}条评论分析成功--`)
     count += 1
   })
-
   console.log(`--第${page}页评论分析成功--`)
-
   // 避免请求频繁被封 IP >_<
   await new Promise(r => setTimeout(r, 2000))
 }
