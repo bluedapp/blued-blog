@@ -1,4 +1,5 @@
 ---
+uuid: deca0060-628a-11e9-8dba-e7626115af4c
 title: Hello World
 date: 2017-04-10 15:24:32
 tags:
